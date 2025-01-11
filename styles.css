@@ -12,6 +12,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-family);
+    cursor: none;
+   /* cursor: url(./images/batarang.png) 16 16, auto; */
 }
 
 #container{
@@ -65,4 +67,51 @@ width: 100px;
 height: 128px;
 pointer-events: none;
 user-select: none;
+}
+
+#restart{
+    padding: 10px 18px;
+    border-radius: 15px;
+    background-color:  var(--grey);
+    border: 1px solid black;
+    box-shadow: var(--box-shadow);
+    color: antiquewhite;
+    transition: 0.5 ease all;
+    pointer-events: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#restart.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+#restart:hover{
+    transform: scale(0.95);
+
+}
+
+#custom-cursor{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url("./images/batarang.png") no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+#custom-cursor.spinning{
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
 }
